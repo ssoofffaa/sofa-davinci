@@ -1,0 +1,548 @@
+/* ============================================================
+   POSICIONES - auto-generated from Figma
+   Source: /build/gen_css.py
+   Figma frame: One page tablet
+   Figma lastModified: 2026-05-03T16:37:01Z
+   Frame: 768 × 9818
+   DO NOT EDIT BY HAND. Re-run gen_css.py after Figma changes.
+   ============================================================ */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .page {
+        width: 768px;
+        height: 9818px;
+    }
+
+    /* --- 9 block (footer) --- */
+    .footer {
+        top: 9246px;
+        height: 835px;
+    }
+    .footer__bg {
+        position: absolute;
+        left: -131px;
+        top: 123px;
+        width: 1076px;
+        height: 464px;
+    }
+    .footer__menu {
+        position: absolute;
+        left: 187px;
+        top: 235px;
+        width: 122px;
+        height: 240px;
+    }
+    .footer__course {
+        position: absolute;
+        left: 426px;
+        top: 406px;
+        width: 263px;
+        height: 78px;
+    }
+    .footer__contacts {
+        position: absolute;
+        left: 426px;
+        top: 235px;
+        width: 212px;
+        height: 100px;
+    }
+    .footer__flower-left {
+        position: absolute;
+        left: 589px;
+        top: 313px;
+        width: 381px;
+        height: 522px;
+    }
+    .footer__flower-right {
+        position: absolute;
+        left: -307px;
+        top: 0px;
+        width: 495px;
+        height: 734px;
+    }
+
+    /* --- 8 block (media) --- */
+    .media {
+        top: 9015px;
+        height: 336px;
+    }
+    .media__title {
+        position: absolute;
+        left: 159.5px;
+        top: 0px;
+        width: 449px;
+        height: 63px;
+    }
+    .media__body {
+        position: absolute;
+        left: 159.5px;
+        top: 87px;
+        width: 449px;
+        height: 60px;
+    }
+    .media__list {
+        position: absolute;
+        left: 139px;
+        top: 187px;
+        width: 490px;
+        height: 149px;
+    }
+
+    /* --- 7 block (reels) --- */
+    .reels {
+        top: 8286px;
+        height: 667px;
+    }
+    .reels__title {
+        position: absolute;
+        left: 63px;
+        top: 0px;
+        width: 639px;
+        height: 120px;
+    }
+    .reels__body {
+        position: absolute;
+        left: 135px;
+        top: 144px;
+        width: 495px;
+        height: 60px;
+    }
+    .reels__list {
+        position: absolute;
+        left: 28px;
+        top: 244px;
+        width: 1048px;
+        height: 423px;
+    }
+
+    /* --- 6 block (joyas) --- */
+    .rings {
+        top: 7083px;
+        height: 1144px;
+    }
+    .rings__ring {
+        position: absolute;
+        left: 323px;
+        top: 769px;
+        width: 252px;
+        height: 310px;
+    }
+    .rings__title {
+        position: absolute;
+        left: 28px;
+        top: 0px;
+        width: 496px;
+        height: 126px;
+    }
+    .rings__body {
+        position: absolute;
+        left: 315px;
+        top: 149px;
+        width: 425.8px;
+        height: 220px;
+    }
+    .rings__image-4 {
+        position: absolute;
+        left: 67px;
+        top: 149px;
+        width: 188px;
+        height: 220px;
+    }
+    .rings__image-5 {
+        position: absolute;
+        left: 245px;
+        top: 419px;
+        width: 199px;
+        height: 245px;
+    }
+    .rings__art-1 {
+        position: absolute;
+        left: 364px;
+        top: 656px;
+        width: 99px;
+        height: 76px;
+    }
+    .rings__hint {
+        position: absolute;
+        left: 27px;
+        top: 769px;
+        width: 228px;
+        height: 64px;
+    }
+    .overlay--rings-pin {
+        position: absolute;
+        left: 27px;
+        top: 7518px;
+        width: 209px;
+        height: 291px;
+    }
+    .rings__ring--2 {
+        position: absolute;
+        left: 495px;
+        top: 422px;
+        width: 252px;
+        height: 310px;
+    }
+    .rings__art-2 {
+        position: absolute;
+        left: 596px;
+        top: 748px;
+        width: 140px;
+        height: 114px;
+    }
+    .rings__ring--3 {
+        position: absolute;
+        left: 29px;
+        top: 834px;
+        width: 252px;
+        height: 310px;
+    }
+
+    /* --- 5 block (design) --- */
+    .design {
+        top: 5277px;
+        height: 1757px;
+    }
+    .design__backtexture {
+        position: absolute;
+        left: -192px;
+        top: 0px;
+        width: 1152px;
+        height: 1602px;
+    }
+    .design__image-1 {
+        position: absolute;
+        left: 144px;
+        top: 104px;
+        width: 481px;
+        height: 548px;
+    }
+    .design__image-3 {
+        position: absolute;
+        left: 143px;
+        top: 400px;
+        width: 260px;
+        height: 304px;
+    }
+    .design__title {
+        position: absolute;
+        left: 116px;
+        top: 725px;
+        width: 537px;
+        height: 126px;
+    }
+    .design__body {
+        position: absolute;
+        left: 116px;
+        top: 875px;
+        width: 537px;
+        height: 160px;
+    }
+    .design__image-2 {
+        position: absolute;
+        left: -14px;
+        top: 1077px;
+        width: 747px;
+        height: 371px;
+    }
+    .overlay--design-bottom {
+        position: absolute;
+        left: -181px;
+        top: 6671px;
+        width: 1130px;
+        height: 363px;
+    }
+
+    /* --- 4 block (ceramics) --- */
+    .ceramics {
+        top: 3436px;
+        height: 2095px;
+    }
+    .ceramics__bg {
+        position: absolute;
+        left: -586px;
+        top: 290px;
+        width: 1920px;
+        height: 1461px;
+    }
+    .ceramics__title {
+        position: absolute;
+        left: 81.5px;
+        top: 380px;
+        width: 575px;
+        height: 120px;
+    }
+    .ceramics__body {
+        position: absolute;
+        left: 80px;
+        top: 524px;
+        width: 578px;
+        height: 60px;
+    }
+    .ceramics__outro {
+        position: absolute;
+        left: 130px;
+        top: 1511px;
+        width: 488px;
+        height: 60px;
+    }
+    .overlay--ceramics-top {
+        position: absolute;
+        left: -181px;
+        top: 3436px;
+        width: 1130px;
+        height: 356px;
+    }
+    .overlay--ceramics-bottom {
+        position: absolute;
+        left: -181px;
+        top: 4695px;
+        width: 1130px;
+        height: 836px;
+    }
+    .ceramics__step-4 {
+        position: absolute;
+        left: 72px;
+        top: 1281px;
+        width: 624px;
+        height: 209px;
+    }
+    .ceramics__step-1 {
+        position: absolute;
+        left: 72px;
+        top: 619px;
+        width: 624px;
+        height: 141px;
+    }
+    .ceramics__step-2 {
+        position: absolute;
+        left: 73px;
+        top: 838px;
+        width: 622px;
+        height: 141px;
+    }
+    .ceramics__step-3 {
+        position: absolute;
+        left: 73px;
+        top: 1050px;
+        width: 622px;
+        height: 141px;
+    }
+    .ceramics__step-label-1 {
+        position: absolute;
+        left: 359px;
+        top: 760px;
+        width: 298.6px;
+        height: 70.9px;
+    }
+    .ceramics__step-label-2 {
+        position: absolute;
+        left: 80px;
+        top: 978.9px;
+        width: 299.6px;
+        height: 70.9px;
+    }
+    .ceramics__step-label-3 {
+        position: absolute;
+        left: 359px;
+        top: 1197.9px;
+        width: 282.6px;
+        height: 70.9px;
+    }
+
+    /* --- 3 block (pintura) --- */
+    .drawing {
+        top: 2277px;
+        height: 1227px;
+    }
+    .drawing__title {
+        position: absolute;
+        left: 31px;
+        top: 0px;
+        width: 423px;
+        height: 120px;
+    }
+    .drawing__body {
+        position: absolute;
+        left: 31px;
+        top: 144px;
+        width: 415px;
+        height: 240px;
+    }
+    .drawing__art-2 {
+        position: absolute;
+        left: 374px;
+        top: 1072px;
+        width: 222px;
+        height: 155px;
+    }
+    .drawing__gallery {
+        position: absolute;
+        left: 55px;
+        top: 400px;
+        width: 661.4px;
+        height: 509px;
+    }
+    .drawing__image-3 {
+        position: absolute;
+        left: 24px;
+        top: 925px;
+        width: 350px;
+        height: 241px;
+    }
+    .drawing__art-1 {
+        position: absolute;
+        left: 419px;
+        top: 808px;
+        width: 327px;
+        height: 264px;
+    }
+    .drawing__image-2 {
+        position: absolute;
+        left: 485px;
+        top: 0px;
+        width: 250px;
+        height: 367px;
+    }
+
+    /* --- 2 block (photo) --- */
+    .photo {
+        top: 1128px;
+        height: 1014px;
+    }
+    .photo__landscape {
+        position: absolute;
+        left: 281px;
+        top: 436px;
+        width: 460px;
+        height: 289px;
+    }
+    .photo__title {
+        position: absolute;
+        left: 29px;
+        top: 0px;
+        width: 500px;
+        height: 120px;
+    }
+    .photo__body {
+        position: absolute;
+        left: 351.9px;
+        top: 144px;
+        width: 389.1px;
+        height: 260px;
+    }
+    .photo__audio-label {
+        position: absolute;
+        left: 29px;
+        top: 176px;
+        width: 228px;
+        height: 64px;
+    }
+    .photo__disk {
+        position: absolute;
+        left: 103px;
+        top: 213px;
+        width: 186px;
+        height: 185px;
+    }
+    .photo__diskplay {
+        position: absolute;
+        left: 157px;
+        top: 200px;
+        width: 181px;
+        height: 165px;
+    }
+    .photo__polaroid {
+        position: absolute;
+        left: 28px;
+        top: 436px;
+        width: 220px;
+        height: 243px;
+    }
+    .photo__polaroid--2 {
+        position: absolute;
+        left: 28px;
+        top: 861px;
+        width: 139px;
+        height: 153px;
+    }
+    .overlay--photo-pin {
+        position: absolute;
+        left: 425px;
+        top: 1883px;
+        width: 316px;
+        height: 259px;
+    }
+    .photo__polaroid--3 {
+        position: absolute;
+        left: 248px;
+        top: 755px;
+        width: 113px;
+        height: 143px;
+    }
+
+    /* --- 1 block (cover) --- */
+    .cover {
+        top: -178px;
+        height: 1306px;
+    }
+    .cover__bg-watercolor {
+        position: absolute;
+        left: -562px;
+        top: 0px;
+        width: 1920px;
+        height: 1057px;
+    }
+    .cover__title {
+        position: absolute;
+        left: -118px;
+        top: 297px;
+        width: 1002px;
+        height: 200px;
+    }
+    .cover__pond {
+        position: absolute;
+        left: -181px;
+        top: 449px;
+        width: 1130px;
+        height: 813px;
+    }
+    .cover__signature {
+        position: absolute;
+        left: 539px;
+        top: 716px;
+        width: 194px;
+        height: 89px;
+    }
+    .cover__bug-left {
+        position: absolute;
+        left: 29px;
+        top: 554.1px;
+        width: 48px;
+        height: 53.8px;
+    }
+    .cover__bug-right {
+        position: absolute;
+        left: 557px;
+        top: 570px;
+        width: 53px;
+        height: 53.8px;
+    }
+    .cover__flower-left {
+        position: absolute;
+        left: -343px;
+        top: 397px;
+        width: 587px;
+        height: 865px;
+    }
+    .cover__flower-right {
+        position: absolute;
+        left: 481px;
+        top: 432px;
+        width: 468px;
+        height: 874px;
+    }
+
+    /* --- page-level overlays / footer parts --- */
+}

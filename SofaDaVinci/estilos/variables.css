@@ -1,0 +1,14 @@
+:root {
+    --color-bg: #f4f1ec;
+    --color-fg: #2a2929;
+    --color-deep: #143f4e;
+    --color-sand: #dbcbb8;
+    --color-olive: #6f633f;
+    --color-sage: #a7a293;
+
+    --font-serif: "Instrument Serif", Georgia, serif;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-script: "Mrs Saint Delafield", cursive;
+
+    --page-width: 1440px;
+}

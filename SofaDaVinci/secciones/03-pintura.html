@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Pintura · Acuarela y acrílico — Sofía Dziuba</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <style>
+        /* standalone section: hoist content to the top of the page
+           by negating the absolute Y offset of this section */
+        .page { height: 1022px; }
+        .page > * { transform: translateY(-2212px); }
+    </style>
+</head>
+<body>
+<div class="page">
+<section class="drawing" id="pintura" aria-labelledby="drawing-title">
+            <h2 class="drawing__title" id="drawing-title">Acuarela y <em>acrílico: arte</em> al aire libre</h2>
+            <div class="drawing__body">
+                <p>Comencé realizando sesiones de plein air con bocetos rápidos en acuarela para captar la ligereza y el color del entorno. Esa exploración inicial culminó en la creación de una pintura al óleo de gran formato, donde logró materializar la profundidad de la naturaleza con mayor intensidad.</p>
+                <p>Las acuarelas y los acrílicos me ayudan a capturar el estado de ánimo adecuado y a capturar combinaciones de colores frescos. Así, los cojines sobre papel y lienzo se convirtieron en el comienzo de mi absorción en el mundo de la botánica del loto.</p>
+            </div>
+
+            <img class="drawing__art-1" src="../multimedia/imagenes/3-art-1.png" alt="Detalle de paleta con pinceles">
+            <img class="drawing__art-2" src="../multimedia/imagenes/3-art-2.png" alt="Boceto de flor de loto en acuarela">
+            <img class="drawing__image-1" src="../multimedia/imagenes/3-image-1.png" alt="Sesión de plein air en el jardín">
+            <img class="drawing__image-2" src="../multimedia/imagenes/3-image-2.png" alt="Pintura al óleo de nenúfares">
+            <img class="drawing__image-3" src="../multimedia/imagenes/3-image-3.png" alt="Pinceles y paleta sobre lienzo">
+
+            <figure class="drawing__gallery" aria-label="Galería de bocetos">
+                <button type="button" class="drawing__gallery-arrow" id="gallery-prev" aria-label="Boceto anterior">
+                    <img src="../multimedia/imagenes/gallery-arrow-left.svg" alt="">
+                </button>
+                <div class="drawing__gallery-frame">
+                    <img class="drawing__gallery-photo" src="../multimedia/imagenes/gallery-01.png" alt="Boceto 1 enmarcado">
+                    <img class="drawing__gallery-photo is-hidden" src="../multimedia/imagenes/gallery-02.png" alt="Boceto 2 enmarcado">
+                    <img class="drawing__gallery-photo is-hidden" src="../multimedia/imagenes/gallery-03.png" alt="Boceto 3 enmarcado">
+                    <img class="drawing__gallery-photo is-hidden" src="../multimedia/imagenes/gallery-04.png" alt="Boceto 4 enmarcado">
+                    <img class="drawing__gallery-photo is-hidden" src="../multimedia/imagenes/gallery-05.png" alt="Boceto 5 enmarcado">
+                    <img class="drawing__gallery-photo is-hidden" src="../multimedia/imagenes/gallery-06.png" alt="Boceto 6 enmarcado">
+                    <img class="drawing__gallery-photo is-hidden" src="../multimedia/imagenes/gallery-07.png" alt="Boceto 7 enmarcado">
+                    <img class="drawing__gallery-photo is-hidden" src="../multimedia/imagenes/gallery-08.png" alt="Boceto 8 enmarcado">
+                </div>
+                <button type="button" class="drawing__gallery-arrow" id="gallery-next" aria-label="Boceto siguiente">
+                    <img src="../multimedia/imagenes/gallery-arrow-right.svg" alt="">
+                </button>
+            </figure>
+        </section>
+</div>
+
+<script>
+    (function () {
+        var disk = document.getElementById('disk-toggle');
+        var audio = document.getElementById('ambient-audio');
+        if (disk && audio) {
+            disk.addEventListener('click', function () {
+                if (audio.paused) { audio.play(); disk.classList.add('is-playing'); }
+                else { audio.pause(); disk.classList.remove('is-playing'); }
+            });
+        }
+        var photos = document.querySelectorAll('.drawing__gallery-photo');
+        var prev = document.getElementById('gallery-prev');
+        var next = document.getElementById('gallery-next');
+        var idx = 0;
+        function show(i) { photos.forEach(function (p, n) { p.classList.toggle('is-hidden', n !== i); }); }
+        if (photos.length && prev && next) {
+            prev.addEventListener('click', function () { idx = (idx - 1 + photos.length) % photos.length; show(idx); });
+            next.addEventListener('click', function () { idx = (idx + 1) % photos.length; show(idx); });
+        }
+    })();
+</script>
+
+</body>
+</html>

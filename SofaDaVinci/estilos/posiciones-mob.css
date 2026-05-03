@@ -1,0 +1,520 @@
+/* ============================================================
+   POSICIONES - auto-generated from Figma
+   Source: /build/gen_css.py
+   Figma frame: One page mob
+   Figma lastModified: 2026-05-03T02:09:30Z
+   Frame: 376 × 9723
+   DO NOT EDIT BY HAND. Re-run gen_css.py after Figma changes.
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    .page {
+        width: 376px;
+        height: 9723px;
+    }
+
+    /* --- 5 block (design) --- */
+    .design {
+        top: 4980px;
+        height: 1632px;
+    }
+    .design__backtexture {
+        position: absolute;
+        left: -111px;
+        top: 0px;
+        width: 598px;
+        height: 1470px;
+    }
+    .design__title {
+        position: absolute;
+        left: 19px;
+        top: 681px;
+        width: 338px;
+        height: 120px;
+    }
+    .design__body {
+        position: absolute;
+        left: 19px;
+        top: 825px;
+        width: 338px;
+        height: 240px;
+    }
+    .overlay--design-bottom {
+        position: absolute;
+        left: -137px;
+        top: 6314px;
+        width: 650px;
+        height: 298px;
+    }
+    .design__image-1 {
+        position: absolute;
+        left: 15px;
+        top: 227px;
+        width: 345px;
+        height: 392px;
+    }
+    .design__image-3 {
+        position: absolute;
+        left: 15px;
+        top: 439px;
+        width: 187px;
+        height: 218px;
+    }
+    .design__image-2 {
+        position: absolute;
+        left: -87px;
+        top: 1092px;
+        width: 489px;
+        height: 242px;
+    }
+
+    /* --- 7 block (reels) --- */
+    .reels {
+        top: 7774px;
+        height: 653px;
+    }
+    .reels__title {
+        position: absolute;
+        left: 19px;
+        top: 0px;
+        width: 338px;
+        height: 120px;
+    }
+    .reels__body {
+        position: absolute;
+        left: 19px;
+        top: 132px;
+        width: 338px;
+        height: 80px;
+    }
+    .reels__list {
+        position: absolute;
+        left: 19px;
+        top: 230px;
+        width: 1030px;
+        height: 423px;
+    }
+
+    /* --- 8 block (media) --- */
+    .media {
+        top: 8467px;
+        height: 487px;
+    }
+    .media__list {
+        position: absolute;
+        left: 84px;
+        top: 179px;
+        width: 208px;
+        height: 308px;
+    }
+    .media__title {
+        position: absolute;
+        left: 19px;
+        top: 0px;
+        width: 338px;
+        height: 41px;
+    }
+    .media__body {
+        position: absolute;
+        left: 19px;
+        top: 53px;
+        width: 338px;
+        height: 80px;
+    }
+
+    /* --- 2 block (photo) --- */
+    .photo {
+        top: 1065px;
+        height: 1330px;
+    }
+    .photo__title {
+        position: absolute;
+        left: 19px;
+        top: 248px;
+        width: 338px;
+        height: 80px;
+    }
+    .photo__body {
+        position: absolute;
+        left: 19px;
+        top: 340px;
+        width: 338px;
+        height: 300px;
+    }
+    .photo__audio-label {
+        position: absolute;
+        left: 74px;
+        top: 0px;
+        width: 228px;
+        height: 48px;
+    }
+    .photo__disk {
+        position: absolute;
+        left: 103px;
+        top: 59px;
+        width: 158px;
+        height: 157px;
+    }
+    .photo__diskplay {
+        position: absolute;
+        left: 149px;
+        top: 48px;
+        width: 153px;
+        height: 139px;
+    }
+    .photo__landscape {
+        position: absolute;
+        left: 19px;
+        top: 672px;
+        width: 339px;
+        height: 215px;
+    }
+    .photo__polaroid {
+        position: absolute;
+        left: 19px;
+        top: 1013px;
+        width: 113px;
+        height: 143px;
+    }
+    .photo__polaroid--2 {
+        position: absolute;
+        left: 165px;
+        top: 1124px;
+        width: 189px;
+        height: 206px;
+    }
+    .photo__polaroid--3 {
+        position: absolute;
+        left: 19px;
+        top: 1198px;
+        width: 117px;
+        height: 129px;
+    }
+    .overlay--photo-pin {
+        position: absolute;
+        left: 101px;
+        top: 1952px;
+        width: 254.6px;
+        height: 222.3px;
+        transform: rotate(-10.39deg);
+    }
+
+    /* --- 6 block (joyas) --- */
+    .rings {
+        top: 6652px;
+        height: 1082px;
+    }
+    .rings__image-5 {
+        position: absolute;
+        left: 176px;
+        top: 365px;
+        width: 181px;
+        height: 222px;
+    }
+    .rings__title {
+        position: absolute;
+        left: 19px;
+        top: 0px;
+        width: 338px;
+        height: 80px;
+    }
+    .rings__body {
+        position: absolute;
+        left: 19px;
+        top: 92px;
+        width: 338px;
+        height: 260px;
+    }
+    .rings__hint {
+        position: absolute;
+        left: 74px;
+        top: 709px;
+        width: 228px;
+        height: 45px;
+    }
+    .rings__ring {
+        position: absolute;
+        left: 19px;
+        top: 772px;
+        width: 252px;
+        height: 310px;
+    }
+    .rings__ring--2 {
+        position: absolute;
+        left: 281px;
+        top: 772px;
+        width: 252px;
+        height: 310px;
+    }
+    .rings__ring--3 {
+        position: absolute;
+        left: 543px;
+        top: 772px;
+        width: 252px;
+        height: 310px;
+    }
+    .rings__art-2 {
+        position: absolute;
+        left: 269px;
+        top: 587px;
+        width: 133px;
+        height: 109px;
+    }
+    .rings__art-1 {
+        position: absolute;
+        left: 196px;
+        top: 614px;
+        width: 49px;
+        height: 38px;
+    }
+    .overlay--rings-pin {
+        position: absolute;
+        left: 0px;
+        top: 7086px;
+        width: 187px;
+        height: 260px;
+    }
+
+    /* --- 3 block (pintura) --- */
+    .drawing {
+        top: 2435px;
+        height: 1359px;
+    }
+    .drawing__title {
+        position: absolute;
+        left: 19px;
+        top: 0px;
+        width: 338px;
+        height: 80px;
+    }
+    .drawing__body {
+        position: absolute;
+        left: 19px;
+        top: 92px;
+        width: 338px;
+        height: 280px;
+    }
+    .drawing__gallery {
+        position: absolute;
+        left: 15px;
+        top: 404px;
+        width: 345.8px;
+        height: 478.3px;
+    }
+    .drawing__art-1 {
+        position: absolute;
+        left: 114px;
+        top: 1129px;
+        width: 284.9px;
+        height: 230px;
+    }
+    .drawing__image-3 {
+        position: absolute;
+        left: 11px;
+        top: 904px;
+        width: 350px;
+        height: 241px;
+    }
+    .drawing__art-2 {
+        position: absolute;
+        left: -67px;
+        top: 1120px;
+        width: 200px;
+        height: 140px;
+    }
+
+    /* --- 4 block (ceramics) --- */
+    .ceramics {
+        top: 3738px;
+        height: 1544px;
+    }
+    .ceramics__bg {
+        position: absolute;
+        left: -137px;
+        top: 136px;
+        width: 650px;
+        height: 1237px;
+    }
+    .ceramics__title {
+        position: absolute;
+        left: 52px;
+        top: 234px;
+        width: 272px;
+        height: 80px;
+    }
+    .ceramics__body {
+        position: absolute;
+        left: 19px;
+        top: 326px;
+        width: 338px;
+        height: 120px;
+    }
+    .overlay--ceramics-top {
+        position: absolute;
+        left: -137px;
+        top: 3738px;
+        width: 650px;
+        height: 234px;
+    }
+    .ceramics__step-1 {
+        position: absolute;
+        left: -23px;
+        top: 480px;
+        width: 422px;
+        height: 95px;
+    }
+    .ceramics__step-label-1 {
+        position: absolute;
+        left: 54px;
+        top: 635.3px;
+        width: 268px;
+        height: 20px;
+    }
+    .ceramics__step-2 {
+        position: absolute;
+        left: -23px;
+        top: 667.3px;
+        width: 422px;
+        height: 95px;
+    }
+    .ceramics__step-label-2 {
+        position: absolute;
+        left: 53.5px;
+        top: 822.6px;
+        width: 269px;
+        height: 20px;
+    }
+    .ceramics__step-3 {
+        position: absolute;
+        left: -23px;
+        top: 854.6px;
+        width: 422px;
+        height: 95px;
+    }
+    .ceramics__step-label-3 {
+        position: absolute;
+        left: 62px;
+        top: 1009.9px;
+        width: 252px;
+        height: 20px;
+    }
+    .ceramics__step-4 {
+        position: absolute;
+        left: -23px;
+        top: 1041.9px;
+        width: 422px;
+        height: 141.7px;
+    }
+    .overlay--ceramics-bottom {
+        position: absolute;
+        left: -137px;
+        top: 4891px;
+        width: 650px;
+        height: 391px;
+    }
+
+    /* --- 9 block (footer) --- */
+    .footer {
+        top: 8944px;
+        height: 779px;
+    }
+    .footer__bg {
+        position: absolute;
+        left: -137px;
+        top: 53px;
+        width: 650px;
+        height: 255px;
+    }
+    .footer__contacts {
+        position: absolute;
+        left: 144px;
+        top: 141px;
+        width: 212px;
+        height: 100px;
+    }
+    .footer__menu {
+        position: absolute;
+        left: 144px;
+        top: 309px;
+        width: 122px;
+        height: 240px;
+    }
+    .footer__course {
+        position: absolute;
+        left: 144px;
+        top: 617px;
+        width: 214px;
+        height: 98px;
+    }
+    .footer__flower-right {
+        position: absolute;
+        left: -227px;
+        top: 0px;
+        width: 370px;
+        height: 473px;
+    }
+    .footer__flower-left {
+        position: absolute;
+        left: -80px;
+        top: 417px;
+        width: 203px;
+        height: 336px;
+    }
+
+    /* --- 1 block (cover) --- */
+    .cover {
+        top: 0px;
+        height: 1025px;
+    }
+    .cover__bg-watercolor {
+        position: absolute;
+        left: -137px;
+        top: 0px;
+        width: 650px;
+        height: 701px;
+    }
+    .cover__title {
+        position: absolute;
+        left: -18px;
+        top: 108px;
+        width: 412px;
+        height: 240px;
+    }
+    .cover__pond {
+        position: absolute;
+        left: -137px;
+        top: 315px;
+        width: 650px;
+        height: 629px;
+    }
+    .cover__signature {
+        position: absolute;
+        left: 37px;
+        top: 956px;
+        width: 302px;
+        height: 69px;
+    }
+    .cover__flower-left {
+        position: absolute;
+        left: -263px;
+        top: 360px;
+        width: 428px;
+        height: 630px;
+    }
+    .cover__flower-right {
+        position: absolute;
+        left: 226px;
+        top: 362px;
+        width: 336px;
+        height: 628px;
+    }
+    .cover__menu-burger {
+        position: absolute;
+        left: 304px;
+        top: 25px;
+        width: 53px;
+        height: 55px;
+    }
+
+}

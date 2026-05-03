@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Fotografía · Observación — Sofía Dziuba</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <style>
+        /* standalone section: hoist content to the top of the page
+           by negating the absolute Y offset of this section */
+        .page { height: 922px; }
+        .page > * { transform: translateY(-1267px); }
+    </style>
+</head>
+<body>
+<div class="page">
+<section class="photo" id="fotografia" aria-labelledby="photo-title">
+            <h2 class="photo__title" id="photo-title">Observación: <em>el origen de la forma</em></h2>
+            <div class="photo__body">
+                <p>Toda idea comienza con la contemplación. Caminar por jardines es mi meditación visual. Busco detalles: la curva de un pétalo, la textura de la corteza o la forma en que la luz incide sobre las hojas. Estos patrones se convierten en la base de todos mis proyectos futuros.</p>
+                <p>Mi proceso creativo comienza al aire libre, en <strong>Jardín Botánico Carlos Thays</strong>. Desde hace dos años, los nenúfares se han convertido en mi mayor fascinación visual: son perfectos, serenos, pero al mismo tiempo vibrantes y multifacéticos. Esta observación constante es el motor que me impulsa a eternizar estas siluetas en mi arte.</p>
+            </div>
+
+            <p class="photo__audio-label">Enciende el tocadiscos para sentir el momento</p>
+
+            <button type="button" class="photo__disk" id="disk-toggle" aria-label="Reproducir música ambiente">
+                <img class="photo__disk-img" src="../multimedia/imagenes/2-disk.png" alt="">
+            </button>
+            <img class="photo__diskplay" src="../multimedia/imagenes/2-diskplay.png" alt="" aria-hidden="true">
+            <audio id="ambient-audio" preload="metadata" src="../multimedia/audio/one-summers-day.mp3"></audio>
+
+            <img class="photo__landscape" src="../multimedia/imagenes/2-image-5.png" alt="Estanque del Jardín Botánico con nenúfares en flor">
+
+            <figure class="photo__polaroid">
+                <img class="photo__polaroid-face photo__polaroid-face--front" src="../multimedia/imagenes/2-image-1-front.png" alt="Nenúfar rosa flotando en el agua">
+                <img class="photo__polaroid-face photo__polaroid-face--back" src="../multimedia/imagenes/2-image-1-back.png" alt="">
+            </figure>
+            <figure class="photo__polaroid photo__polaroid--2">
+                <img class="photo__polaroid-face photo__polaroid-face--front" src="../multimedia/imagenes/2-image-2-front.png" alt="Hoja de loto con gotas de agua">
+                <img class="photo__polaroid-face photo__polaroid-face--back" src="../multimedia/imagenes/2-image-2-back.png" alt="">
+            </figure>
+            <figure class="photo__polaroid photo__polaroid--3">
+                <img class="photo__polaroid-face photo__polaroid-face--front" src="../multimedia/imagenes/2-image-4-front.png" alt="Pétalos de flor observados de cerca">
+                <img class="photo__polaroid-face photo__polaroid-face--back" src="../multimedia/imagenes/2-image-4-back.png" alt="">
+            </figure>
+            <figure class="photo__polaroid photo__polaroid--4">
+                <img class="photo__polaroid-face photo__polaroid-face--front" src="../multimedia/imagenes/2-image-3-front.png" alt="Follaje del jardín botánico">
+                <img class="photo__polaroid-face photo__polaroid-face--back" src="../multimedia/imagenes/2-image-3-back.png" alt="">
+            </figure>
+        </section>
+</div>
+
+<script>
+    (function () {
+        var disk = document.getElementById('disk-toggle');
+        var audio = document.getElementById('ambient-audio');
+        if (disk && audio) {
+            disk.addEventListener('click', function () {
+                if (audio.paused) { audio.play(); disk.classList.add('is-playing'); }
+                else { audio.pause(); disk.classList.remove('is-playing'); }
+            });
+        }
+        var photos = document.querySelectorAll('.drawing__gallery-photo');
+        var prev = document.getElementById('gallery-prev');
+        var next = document.getElementById('gallery-next');
+        var idx = 0;
+        function show(i) { photos.forEach(function (p, n) { p.classList.toggle('is-hidden', n !== i); }); }
+        if (photos.length && prev && next) {
+            prev.addEventListener('click', function () { idx = (idx - 1 + photos.length) % photos.length; show(idx); });
+            next.addEventListener('click', function () { idx = (idx + 1) % photos.length; show(idx); });
+        }
+    })();
+</script>
+
+</body>
+</html>

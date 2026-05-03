@@ -1,0 +1,1618 @@
+@import url("reset.css");
+@import url("tipografias.css");
+@import url("variables.css");
+@import url("posiciones.css");      /* auto-generated for desktop (>1024px) */
+@import url("posiciones-tab.css");  /* auto-generated for tablet, wrapped in @media (601-1024px) */
+@import url("posiciones-mob.css");  /* auto-generated for mobile, wrapped in @media (max-width:600px) */
+
+/* ============================================================
+   MODERN RESET (revisiones-profesora)
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+img, svg {
+    max-width: 100%;
+    display: block;
+}
+picture {
+    display: contents;
+}
+
+/* ============================================================
+   PAGE LAYOUT
+   1440px-wide fixed canvas, centered on wider viewports.
+   Horizontal bleed (elements extending to 1920-wide decoration)
+   is clipped at the body edge, so wider viewports show more of it.
+   ============================================================ */
+html {
+    background: var(--color-bg);
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    overflow-x: clip;
+    min-width: 320px;
+}
+
+/* Desktop+tablet keep the legacy 1440-canvas minimum so layout doesn't reflow */
+@media (min-width: 601px) {
+    body {
+        min-width: 1440px;
+    }
+}
+
+.page {
+    position: relative;
+    margin: 0 auto;
+    overflow-y: clip;
+}
+
+/* All page children are absolutely positioned. Exact box comes from posiciones.css. */
+.page > header,
+.page > footer,
+.page > img,
+.page main > section {
+    position: absolute;
+}
+
+/* .page > main is a semantic wrapper with no layout of its own. */
+.page > main {
+    display: contents;
+}
+
+/* Sections default to 1440px wide unless posiciones.css overrides. */
+.page main > section,
+.page > header,
+.page > footer {
+    left: 0;
+    width: 1440px;
+}
+
+/* Reset.css sets max-width:100% for all images. Inside the fixed canvas
+   we want absolute widths (1920px bleed backgrounds etc.) to render as
+   written, regardless of container. */
+.page img {
+    max-width: none;
+    user-select: none;
+}
+
+/* Full-width bleed elements. Designed for 1920px wide canvas so they
+   overflow beyond the 1440px frame. On viewports wider than 1920 we
+   stretch them to fill the viewport to avoid cream stripes at the edges.
+   Mobile (≤600px) uses its own bleed canvas (650px) - posiciones-mob.css
+   sets exact left/width per Figma. */
+@media (min-width: 601px) {
+    .page .cover__bg-watercolor,
+    .page .cover__pond,
+    .page .ceramics__bg,
+    .page .design__backtexture,
+    .page .footer__bg,
+    .page > .overlay--ceramics-top,
+    .page > .overlay--ceramics-bottom,
+    .page > .overlay--design-bottom {
+        left: min(var(--bleed-left, -240px), calc(720px - 50vw));
+        width: max(1920px, 100vw);
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* Mobile bleed: 650px wide canvas centered. Matches Figma One page mob */
+@media (max-width: 600px) {
+    .page .cover__bg-watercolor,
+    .page .cover__pond,
+    .page .ceramics__bg,
+    .page .design__backtexture,
+    .page .footer__bg,
+    .page .overlay--ceramics-top,
+    .page .overlay--ceramics-bottom,
+    .page .overlay--design-bottom {
+        left: min(-137px, calc(188px - 50vw));
+        width: max(650px, 100vw);
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* Per-element bleed anchors (posiciones.css left values).
+   Using a CSS var keeps the rule above data-driven. */
+.cover__bg-watercolor { --bleed-left: -226px; }
+.cover__pond {
+    --bleed-left: -255px;
+    object-position: top;
+}
+
+
+/* ============================================================
+   BLOCK 1 - COVER (header)
+   ============================================================ */
+.cover__bg-watercolor {
+    z-index: 1;
+}
+
+.cover__pond {
+    z-index: 3;
+}
+
+.cover__flower-left,
+.cover__flower-right {
+    z-index: 4;
+}
+
+.cover__bug-left,
+.cover__bug-right {
+    z-index: 5;
+}
+
+.cover__menu {
+    z-index: 7;
+}
+.cover__menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.cover__menu a {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.08em;
+    color: var(--color-fg);
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.cover__menu a:hover,
+.cover__menu a:focus {
+    color: var(--color-deep);
+}
+
+.cover__title {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 154px;
+    line-height: 162px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--color-fg);
+    z-index: 2;
+}
+
+.cover__signature {
+    z-index: 6;
+}
+
+.cover__signature-name {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.08em;
+    color: var(--color-fg);
+    margin: 0 0 5px;
+}
+
+.cover__signature-role {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+/* ============================================================
+   BLOCK 2 - PHOTO
+   ============================================================ */
+.photo__title {
+    font-family: var(--font-serif);
+    font-size: 50px;
+    line-height: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    margin: 0;
+    letter-spacing: 0;
+}
+
+.photo__title em {
+    font-style: italic;
+}
+
+.photo__body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.photo__body p + p {
+    margin-top: 1em;
+}
+
+.photo__body strong {
+    font-weight: 600;
+}
+
+.photo__audio-label {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: var(--color-sage);
+    margin: 0;
+}
+
+.photo__disk {
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.photo__disk-img {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+}
+
+.photo__disk.is-playing .photo__disk-img {
+    animation: spin-disk 6s linear infinite;
+}
+
+@keyframes spin-disk {
+    to { transform: rotate(360deg); }
+}
+
+.photo__diskplay {
+    z-index: 3;
+}
+
+/* Play overlay above vinyl (revisiones-profesora) */
+.play-disco {
+    position: absolute;
+    left: 310px;
+    top: 273px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 4;
+    transition: background 0.2s, opacity 0.2s;
+}
+.play-disco:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+.play-disco.is-playing {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.photo__polaroid {
+    margin: 0;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.photo__polaroid-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.photo__polaroid-face--back {
+    opacity: 0;
+}
+
+.photo__polaroid:hover,
+.photo__polaroid:focus-within {
+    transform: translateY(-6px) scale(1.04);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+.photo__polaroid:hover .photo__polaroid-face--front,
+.photo__polaroid:focus-within .photo__polaroid-face--front {
+    opacity: 0;
+}
+
+.photo__polaroid:hover .photo__polaroid-face--back,
+.photo__polaroid:focus-within .photo__polaroid-face--back {
+    opacity: 1;
+}
+
+/* ============================================================
+   BLOCK 3 - DRAWING
+   ============================================================ */
+.drawing__title {
+    font-family: var(--font-serif);
+    font-size: 50px;
+    line-height: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.drawing__title em {
+    font-style: italic;
+}
+
+.drawing__title .nowrap {
+    white-space: nowrap;
+}
+
+.drawing__body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.drawing__body p + p {
+    margin-top: 1em;
+}
+
+.drawing__art-1,
+.drawing__art-2 {
+    z-index: 3;
+}
+
+.drawing__image-1,
+.drawing__image-2,
+.drawing__image-3 {
+    z-index: 2;
+}
+
+.drawing__gallery {
+    margin: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.drawing__gallery-arrow {
+    flex-shrink: 0;
+    width: 120px;
+    height: 39px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.drawing__gallery-arrow:hover {
+    transform: scale(1.08);
+}
+
+.drawing__gallery-arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.drawing__gallery-frame {
+    position: relative;
+    flex-shrink: 0;
+    width: 403px;
+    height: 509px;
+}
+
+.drawing__gallery-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.4s ease;
+}
+
+.drawing__gallery-photo.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ============================================================
+   BLOCK 4 - CERAMICS
+   ============================================================ */
+.ceramics__bg {
+    background: var(--color-deep);
+    z-index: 1;
+}
+
+.ceramics__title,
+.ceramics__body,
+.ceramics__steps,
+.ceramics__outro {
+    z-index: 3;
+}
+
+.ceramics__steps {
+    margin: 0;
+    padding: 0;
+}
+
+.ceramics__step {
+    object-fit: cover;
+    object-position: center;
+    z-index: 3;
+}
+
+.ceramics__step-label {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    color: var(--color-sand);
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    z-index: 4;
+}
+
+.ceramics__title {
+    font-family: var(--font-serif);
+    font-size: 50px;
+    line-height: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-bg);
+    margin: 0;
+}
+
+.ceramics__title em {
+    font-style: italic;
+}
+
+.ceramics__body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-bg);
+    text-align: center;
+    margin: 0;
+}
+
+.ceramics__outro {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-bg);
+    text-align: center;
+    margin: 0;
+}
+
+/* ============================================================
+   BLOCK 5 - DESIGN
+   ============================================================ */
+.design__backtexture {
+    z-index: 0;
+}
+
+.design__title,
+.design__body {
+    z-index: 3;
+}
+
+.design__title {
+    font-family: var(--font-serif);
+    font-size: 50px;
+    line-height: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.design__title em {
+    font-style: italic;
+}
+
+.design__body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.design__body p + p {
+    margin-top: 1em;
+}
+
+.design__image-1,
+.design__image-2,
+.design__image-3 {
+    z-index: 2;
+}
+
+/* ============================================================
+   BLOCK 6 - RINGS
+   ============================================================ */
+.rings__title {
+    font-family: var(--font-serif);
+    font-size: 50px;
+    line-height: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    margin: 0;
+    z-index: 2;
+}
+
+.rings__title em {
+    font-style: italic;
+}
+
+.rings__body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-fg);
+    margin: 0;
+    z-index: 2;
+}
+
+.rings__body p + p {
+    margin-top: 1em;
+}
+
+.rings__hint {
+    font-family: var(--font-script);
+    font-size: 30px;
+    line-height: 30px;
+    color: var(--color-sage);
+    margin: 0;
+}
+
+.rings__ring,
+.rings__ring--2,
+.rings__ring--3 {
+    perspective: 1200px;
+    cursor: pointer;
+    margin: 0;
+    z-index: 2;
+}
+
+/* Desktop: rings__row is transparent (rings positioned directly relative to .rings) */
+.rings__row {
+    display: contents;
+}
+
+.rings__ring-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.rings__ring:hover .rings__ring-inner,
+.rings__ring:focus-within .rings__ring-inner,
+.rings__ring--2:hover .rings__ring-inner,
+.rings__ring--2:focus-within .rings__ring-inner,
+.rings__ring--3:hover .rings__ring-inner,
+.rings__ring--3:focus-within .rings__ring-inner {
+    transform: rotateY(180deg);
+}
+
+.rings__ring-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.rings__ring-face--back {
+    transform: rotateY(180deg);
+}
+
+.rings__art-1,
+.rings__art-2,
+.rings__image-4,
+.rings__image-5 {
+    z-index: 3;
+}
+
+/* ============================================================
+   BLOCK 7 - REELS
+   ============================================================ */
+.reels__title {
+    font-family: var(--font-serif);
+    font-size: 50px;
+    line-height: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.reels__title em {
+    font-style: italic;
+}
+
+.reels__body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-fg);
+    text-align: center;
+    margin: 0;
+}
+
+.reels__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reels__item {
+    width: 247px;
+    height: 423px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+.reels__item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.reels__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.reels__item:hover img {
+    transform: scale(1.06);
+}
+
+/* ============================================================
+   BLOCK 8 - MEDIA (social)
+   ============================================================ */
+.media__title {
+    font-family: var(--font-serif);
+    font-size: 50px;
+    line-height: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.media__body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-fg);
+    margin: 0;
+}
+
+.media__list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.media__item {
+    width: 98px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 23px;
+    text-decoration: none;
+}
+
+.media__item-icon {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    display: block;
+}
+
+.media__item-icon img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.media__item-icon .hover {
+    opacity: 0;
+}
+
+.media__item:hover .media__item-icon .default,
+.media__item:focus .media__item-icon .default {
+    opacity: 0;
+}
+
+.media__item:hover .media__item-icon .hover,
+.media__item:focus .media__item-icon .hover {
+    opacity: 1;
+}
+
+.media__item-label {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: var(--color-deep);
+    text-align: center;
+}
+
+/* ============================================================
+   PAGE-LEVEL OVERLAYS (decorative images layered over blocks)
+   ============================================================ */
+.overlay--ceramics-top,
+.overlay--ceramics-bottom,
+.overlay--design-bottom,
+.overlay--photo-pin,
+.overlay--rings-pin {
+    z-index: 5;
+}
+
+/* ============================================================
+   FOOTER (flat elements, not wrapped in a single group in Figma)
+   ============================================================ */
+.footer__bg {
+    z-index: 1;
+    background: var(--color-deep);
+}
+
+.footer__flower-left,
+.footer__flower-right {
+    z-index: 2;
+}
+
+.footer__menu {
+    z-index: 3;
+}
+.footer__menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+}
+
+.footer__menu a {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.08em;
+    color: var(--color-sand);
+    transition: color 0.2s ease;
+}
+
+.footer__menu a:hover,
+.footer__menu a:focus {
+    color: var(--color-bg);
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    font-style: normal;
+    text-align: left;
+    z-index: 3;
+}
+
+.footer__contacts a,
+.footer__contacts span {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-sand);
+}
+
+.footer__contacts a:hover {
+    color: var(--color-bg);
+}
+
+.footer__course {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    z-index: 3;
+}
+
+.footer__course span {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.06em;
+    color: var(--color-sand);
+}
+
+/* ============================================================
+   BOTON SUBIR (revisiones-profesora)
+   ============================================================ */
+.boton-subir {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 100;
+    transition: opacity 0.3s, background 0.3s;
+}
+.boton-subir:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* ============================================================
+   MENU OVERLAY (mobile + tablet)
+   Figma frames:
+     "One page mob menu open"    376 × 881
+     "One page tablet menu open" 768 × 1034
+   ============================================================ */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.28s ease, visibility 0s linear 0.28s;
+}
+.menu-overlay.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.28s ease;
+}
+.menu-overlay__inner {
+    position: absolute;
+    background: var(--color-deep);
+    overflow: hidden;
+}
+
+.menu-overlay__close {
+    position: absolute;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-overlay__close img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu-overlay__nav {
+    position: absolute;
+    z-index: 2;
+}
+.menu-overlay__nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.menu-overlay__nav a {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 24px;
+    letter-spacing: -0.08em;
+    color: var(--color-sand);
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.menu-overlay__nav a:hover,
+.menu-overlay__nav a:focus {
+    color: var(--color-bg);
+}
+
+.menu-overlay__media {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+.menu-overlay__media li {
+    width: 63px;
+    height: 64px;
+    flex-shrink: 0;
+}
+.menu-overlay__media a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.menu-overlay__media a:hover,
+.menu-overlay__media a:focus {
+    transform: scale(1.08);
+}
+.menu-overlay__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+body.is-menu-open {
+    overflow: hidden;
+}
+
+@media (min-width: 1025px) {
+    .menu-overlay { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-overlay,
+    .menu-overlay__inner {
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* ============================================================
+   TIPOGRAFIA (revisiones-profesora)
+   Colocado al final del archivo para vencer reglas anteriores
+   con la misma especificidad (.ceramics__body, .reels__body, etc.).
+   ============================================================ */
+
+/* letter-spacing -0.03rem en titulos, parrafos, labels y contactos.
+   Excluido: cover__title (logo), navs, botones. */
+p,
+article p,
+section p,
+.photo__body,
+.photo__body p,
+.drawing__body,
+.drawing__body p,
+.design__body,
+.design__body p,
+.rings__body,
+.rings__body p,
+.ceramics__body,
+.ceramics__outro,
+.reels__body,
+.media__body,
+.photo__title,
+.drawing__title,
+.ceramics__title,
+.design__title,
+.rings__title,
+.reels__title,
+.media__title,
+.photo__audio-label,
+.rings__hint,
+.ceramics__step-label,
+.cover__signature-name,
+.cover__signature-role,
+.footer__contacts a,
+.footer__contacts span,
+.footer__course span {
+    letter-spacing: -0.03rem;
+}
+
+/* line-height 1.5 solo en parrafos. Titulos mantienen su line-height original. */
+p,
+article p,
+section p,
+.photo__body,
+.photo__body p,
+.drawing__body,
+.drawing__body p,
+.design__body,
+.design__body p,
+.rings__body,
+.rings__body p,
+.ceramics__body,
+.ceramics__outro,
+.reels__body,
+.media__body {
+    line-height: 1.5;
+}
+
+/* Italic en titulos no se debe pisar */
+.photo__title em,
+.drawing__title em,
+.ceramics__title em,
+.design__title em,
+.rings__title em,
+.reels__title em {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   MOBILE BURGER (default hidden, shown ≤600px)
+   ============================================================ */
+.cover__menu-burger {
+    display: none;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    z-index: 7;
+}
+.cover__menu-burger img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ============================================================
+   MOBILE LAYOUT (≤600px) - matches "One page mob" Figma frame
+   ============================================================ */
+@media (max-width: 600px) {
+
+    /* Sections inherit desktop's hardcoded width: 1440px. Override to mob width. */
+    .page > header,
+    .page main > section,
+    .page > footer {
+        width: 376px;
+    }
+    .page {
+        overflow-x: clip;
+    }
+
+    /* Show burger, hide full nav */
+    .cover__menu-burger {
+        display: block;
+    }
+    .cover__menu {
+        display: none;
+    }
+
+    /* Menu overlay (Figma "One page mob menu open" 376×881):
+       full-screen panel, fade-in + subtle Y slide.
+       Close anchored to right (Figma 19px from frame right),
+       nav/media horizontally centered, media pinned to bottom
+       (Figma 50px from frame bottom) so it stays visible on
+       any viewport height. */
+    .menu-overlay__inner {
+        inset: 0;
+        transform: translateY(-12px);
+        transition: transform 0.3s cubic-bezier(.22, .61, .36, 1);
+    }
+    .menu-overlay.is-open .menu-overlay__inner {
+        transform: translateY(0);
+    }
+    .menu-overlay__close {
+        right: 19px;
+        top: 27px;
+        width: 54px;
+        height: 53px;
+    }
+    .menu-overlay__nav {
+        left: 50%;
+        top: 154px;
+        width: 183px;
+        transform: translateX(-50%);
+    }
+    .menu-overlay__media {
+        left: 50%;
+        bottom: 50px;
+        width: 277px;
+        transform: translateX(-50%);
+    }
+
+    /* Atoms that exist only on desktop - hide on mobile */
+    .cover__bug-left,
+    .cover__bug-right,
+    .photo__polaroid--4,
+    .drawing__image-1,
+    .drawing__image-2,
+    .ceramics__outro,
+    .rings__image-4 {
+        display: none;
+    }
+
+    /* Cover title: 74px / lh 80 (Figma mob) */
+    .cover__title {
+        font-size: 74px;
+        line-height: 80px;
+        text-align: center;
+    }
+
+    /* Section titles: 38/40 (Figma mob) */
+    .photo__title,
+    .drawing__title,
+    .ceramics__title,
+    .design__title,
+    .reels__title,
+    .media__title {
+        font-size: 38px;
+        line-height: 40px;
+    }
+    .rings__title {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    /* Body text + titles: in Figma mob almost everything is CENTER aligned */
+    .photo__title,
+    .drawing__title,
+    .ceramics__title,
+    .design__title,
+    .rings__title,
+    .reels__title,
+    .media__title,
+    .photo__body,
+    .drawing__body,
+    .design__body,
+    .rings__body,
+    .ceramics__body,
+    .reels__body,
+    .media__body,
+    .photo__audio-label,
+    .rings__hint,
+    .cover__signature,
+    .cover__signature-name,
+    .cover__signature-role,
+    .footer__contacts {
+        text-align: center;
+    }
+    .photo__body,
+    .drawing__body,
+    .design__body,
+    .rings__body,
+    .ceramics__body,
+    .reels__body,
+    .media__body {
+        font-size: 16px;
+    }
+    .footer__contacts {
+        align-items: center;
+    }
+
+    /* Mrs Saint Delafield script labels: 30px on mobile */
+    .photo__audio-label,
+    .rings__hint,
+    .ceramics__step-label,
+    .media__item-label {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    /* Drawing gallery: image on top, arrows row below.
+       Override desktop's flex with grid template-areas. */
+    .drawing__gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "frame frame"
+            "prev  next";
+        gap: 14px 7px;
+        place-items: center;
+    }
+    .drawing__gallery-frame {
+        grid-area: frame;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 403 / 509;
+    }
+    .drawing__gallery-arrow:first-of-type {
+        grid-area: prev;
+    }
+    .drawing__gallery-arrow:last-of-type {
+        grid-area: next;
+    }
+
+    /* Reels list: Figma mob keeps a row of 4 cards (1030px wide) inside
+       a 376px viewport - implement as horizontal scroll. Override width
+       so the list fits viewport and items overflow horizontally. */
+    .reels__list {
+        width: calc(100% - 38px);
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 14px;
+        padding-right: 19px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+        justify-content: flex-start;
+    }
+    .reels__item {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+
+    /* Joyas/rings: only the 3 rings should scroll, not the title/text.
+       HTML wraps rings in .rings__row - on mobile we make IT the scroll
+       container. Override ring positions to be wrapper-relative (top: 0). */
+    .rings__row {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 823px;
+        width: 100%;
+        height: 310px;
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+    }
+    .rings__ring   { left: 19px;  top: 0; }
+    .rings__ring--2 { left: 281px; top: 0; }
+    .rings__ring--3 { left: 543px; top: 0; }
+
+    /* Footer: Figma mob has a "background color" rect at footer-relative
+       top:286 left:-14 size 404x493 (gen_css.py skips it). Render via ::before
+       so it sits behind watercolor (z:1) and decorative flowers. */
+    .footer::before {
+        content: "";
+        position: absolute;
+        left: -14px;
+        top: 286px;
+        width: 404px;
+        height: 493px;
+        background: #001824;
+        z-index: 0;
+    }
+
+    /* Media list: 2x2 grid needs taller container so labels under bottom
+       row aren't clipped by Figma's 308px height. */
+    .media__list {
+        height: auto;
+        min-height: 360px;
+    }
+    .media__item-icon {
+        height: 100px;
+    }
+
+    /* Media list: 2x2 grid. The flex children are <li>, not .media__item (<a>),
+       so flex-basis must target li or the items collapse to content width. */
+    .media__list ul {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: space-between;
+        gap: 30px 12px;
+    }
+    .media__list li {
+        flex: 0 0 calc(50% - 6px);
+        display: flex;
+        justify-content: center;
+    }
+    .media__item {
+        width: 100%;
+    }
+
+    /* Footer menu: keep vertical, but adjust gap for mobile */
+    .footer__menu ul {
+        gap: 22px;
+    }
+
+    /* Play overlay: 56px button centered on 158x157 disk
+       (disk top 59 + 78.5 = center 137.5; button top = 137.5 - 28 = 109.5) */
+    .play-disco {
+        left: 154px;
+        top: 110px;
+        width: 56px;
+        height: 56px;
+    }
+
+    /* Footer contacts: align text to the left of its 212px container */
+    .footer__contacts {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    /* Body texts overflow Figma's allotted height (browser font metrics
+       differ from Figma). Shift each "first image after body" + cascade
+       blocks below so a 20px gap stays between text bottom and image. */
+
+    /* photo: landscape +40 (body ends ~692, was 672 → 712) */
+    .photo__landscape { top: 712px; }
+
+    /* drawing: gallery+image-3+arts +36, block height +36 */
+    .drawing { height: 1395px; }
+    .drawing__gallery { top: 440px; }
+    .drawing__image-3 { top: 940px; }
+    .drawing__art-1 { top: 1165px; }
+    .drawing__art-2 { top: 1156px; }
+
+    /* ceramics: shift block top +36 (drawing cascade), step-1 +10 (gap),
+       move step-labels right under their step images (no top gap) */
+    .ceramics { top: 3774px; }
+    .ceramics__step-1 { top: 490px; }
+    .ceramics__step-label-1 { top: 585px; }
+    .ceramics__step-label-2 { top: 762.3px; }
+    .ceramics__step-label-3 { top: 949.6px; }
+
+    /* design: shift block top +36, image-2 +33 (body real bottom ~1105) */
+    .design { top: 5016px; }
+    .design__image-2 { top: 1125px; }
+
+    /* rings: shift block top +36, internal cluster +51 to keep relative spacing */
+    .rings { top: 6688px; height: 1133px; }
+    .rings__image-5 { top: 416px; }
+    .rings__art-2 { top: 638px; }
+    .rings__art-1 { top: 665px; }
+    .rings__hint { top: 760px; }
+
+    /* reels: shift block top +87 (drawing+rings cascade), list +18 */
+    .reels { top: 7861px; height: 671px; }
+    .reels__list { top: 248px; }
+
+    /* media+footer: shift block tops by full cascade (+105) */
+    .media { top: 8572px; }
+    .footer { top: 9049px; }
+
+    /* Page-level overlays: shift to follow their host blocks */
+    .overlay--ceramics-top { top: 3774px; }
+    .overlay--ceramics-bottom { top: 4927px; }
+    .overlay--design-bottom { top: 6350px; }
+    .overlay--rings-pin { top: 7122px; }
+
+    /* Page total height grows with cumulative section extensions */
+    .page { height: 9828px; }
+}
+
+/* ============================================================
+   TABLET LAYOUT (601-1024px) - matches "One page tablet" Figma frame
+   ============================================================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    body {
+        min-width: 768px;
+    }
+
+    /* Sections at tablet canvas width */
+    .page > header,
+    .page main > section,
+    .page > footer {
+        width: 768px;
+    }
+
+    /* Atoms not present in tablet Figma frame: hide so desktop position
+       (1440-canvas) doesn't leak in. Skipping menu per request. */
+    .cover__menu,
+    .drawing__image-1,
+    .photo__polaroid--4 {
+        display: none;
+    }
+
+    /* Tablet burger: shown in place of desktop nav.
+       Figma "One page tablet" → menu_mob_open 1 at frame-rel (688,25) 53×55.
+       Sits as direct .page child (page-relative coords). */
+    .cover__menu-burger {
+        display: block;
+        position: absolute;
+        left: 688px;
+        top: 25px;
+        width: 53px;
+        height: 55px;
+    }
+
+    /* Menu overlay (Figma "One page tablet menu open" 768×1034):
+       right-side panel, slides in from right. Cover stays visible to the left.
+       Visible panel width 407px = Figma's 471px panel minus 64px right bleed. */
+    .menu-overlay__inner {
+        right: 0;
+        top: 0;
+        width: 407px;
+        height: 100%;
+        transform: translateX(100%);
+        transition: transform 0.34s cubic-bezier(.22, .61, .36, 1);
+    }
+    .menu-overlay.is-open .menu-overlay__inner {
+        transform: translateX(0);
+    }
+    /* Coords anchored to panel right edge — matches Figma frame-right offsets */
+    .menu-overlay__close {
+        right: 30px;
+        top: 52px;
+        width: 54px;
+        height: 53px;
+    }
+    .menu-overlay__nav {
+        right: 107px;
+        top: 179px;
+        width: 183px;
+    }
+    /* Media row pinned to viewport bottom (Figma: 39px from frame bottom)
+       so it stays visible regardless of viewport height. */
+    .menu-overlay__media {
+        right: 61px;
+        bottom: 39px;
+        width: 277px;
+    }
+    .menu-overlay__media li {
+        height: 63px;
+    }
+
+    /* Bleed atoms designed at 1920px in tablet Figma — anchor at center 384,
+       stretch to viewport when wider */
+    .page .cover__bg-watercolor,
+    .page .ceramics__bg {
+        left: min(-562px, calc(384px - 50vw));
+        width: max(1920px, 100vw);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Bleed atoms designed at ~1130px in tablet — center anchor, stretch */
+    .page .cover__pond,
+    .page .design__backtexture,
+    .page .footer__bg,
+    .page .overlay--ceramics-top,
+    .page .overlay--ceramics-bottom,
+    .page .overlay--design-bottom {
+        left: min(-181px, calc(384px - 50vw));
+        width: max(1130px, 100vw);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Cover title 100/100 (Figma tablet) */
+    .cover__title {
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    /* Section titles stay at desktop 50/63 (matches Figma tablet) */
+
+    /* Body texts: 17/20 (Figma tablet) */
+    .photo__body,
+    .drawing__body,
+    .design__body,
+    .rings__body,
+    .ceramics__body,
+    .ceramics__outro,
+    .reels__body,
+    .media__body,
+    .cover__signature-role {
+        font-size: 17px;
+        line-height: 20px;
+    }
+
+    /* Footer contacts: 17/20 (Figma tablet) */
+    .footer__contacts a,
+    .footer__contacts span {
+        font-size: 17px;
+    }
+
+    /* Mrs Saint Delafield script labels: per-element sizes from Figma */
+    .photo__audio-label,
+    .media__item-label {
+        font-size: 26px;
+        line-height: 24px;
+    }
+    .rings__hint {
+        font-size: 28px;
+        line-height: 24px;
+    }
+    .ceramics__step-label {
+        font-size: 34px;
+        line-height: 24px;
+    }
+
+    /* Play overlay centered on tablet disk (left 103, w 186 → cx 196, btn w 64) */
+    .play-disco {
+        left: 164px;
+    }
+
+    /* Media block: title and body centered (Figma tablet) */
+    .media__title,
+    .media__body {
+        text-align: center;
+    }
+
+    /* Body texts in Spanish render ~30% taller in browser Inter than in Figma's
+       text engine for the same prescribed box, so wrapped text overflows the
+       declared height and the next image creeps onto it. Two fixes per body:
+       1) collapse paragraph gap (Figma stores both halves as one text node);
+       2) push the image directly below body to clear actual rendered height. */
+    .photo__body p + p,
+    .drawing__body p + p,
+    .design__body p + p,
+    .rings__body p + p {
+        margin-top: 0;
+    }
+    .photo__landscape { top: 484px; }
+    .drawing__gallery { top: 433px; }
+    .design__image-2 { top: 1087px; }
+
+    /* Cascade: when photo__landscape moves down +48, the rest of the photo
+       block (polaroids, page-level photo-pin overlay) follow, keeping the
+       Figma relative spacing. Same +33 cascade for the drawing block. */
+    .photo__polaroid    { top: 484px; }   /* was 436 */
+    .photo__polaroid--3 { top: 803px; }   /* was 755 */
+    .photo__polaroid--2 { top: 909px; }   /* was 861 */
+    .overlay--photo-pin { top: 1931px; }  /* was 1883 */
+    .drawing__art-1     { top: 841px; }   /* was 808 */
+    .drawing__image-3   { top: 958px; }   /* was 925 */
+    .drawing__art-2     { top: 1105px; }  /* was 1072 */
+    .overlay--ceramics-top { top: 3469px; } /* was 3436 */
+
+    /* Reels list: Figma tablet keeps a row of 4 cards (1048px wide, gap 20)
+       inside a 768px viewport - implement as horizontal scroll. */
+    .reels__list {
+        width: calc(100% - 28px);
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 20px;
+        padding-right: 28px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+        justify-content: flex-start;
+    }
+    .reels__item {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+}
+
